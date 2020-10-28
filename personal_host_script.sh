@@ -36,7 +36,9 @@ install_extensions () {
 make_it_personal () {
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Shift>Alt_L']"
+	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 }
+
 #Uncomment if you want ubuntu, centos and ubuntu server image
 #download_iso () {
 #	URL="https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-desktop-amd64.iso?_ga=2.191917418.1785140619.1602620046-270242459.1602620046"
