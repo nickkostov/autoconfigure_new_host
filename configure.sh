@@ -15,9 +15,9 @@ install_vscode () {
 
 make_dir () {
 
-	mkdir /home/nick/ISO
-	mkdir /home/nick/Repositories
-	mkdir /home/nick/Courses
+	mkdir ~/ISO
+	mkdir ~/Repositories
+	mkdir ~/Courses
 }
 
 install_discord () {
