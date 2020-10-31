@@ -87,6 +87,8 @@ make_it_personal () {
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Shift>Alt_L']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 	gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark
+	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+
 }
 
 ###Dowload of iso files
