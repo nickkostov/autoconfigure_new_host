@@ -122,6 +122,7 @@ install_discord
 install_git
 install_extensions
 make_it_personal
+install_chrome
 #download_iso
 install_skype
 install_ssh_server
