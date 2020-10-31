@@ -76,6 +76,7 @@ make_it_personal () {
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Shift>Alt_L']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+	gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark
 }
 
 ###Dowload of iso files
