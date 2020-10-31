@@ -1,10 +1,4 @@
-install_vim () {
-	sudo apt install vim -y
-}
-
-install_virtual_box () {
-	sudo apt install virtualbox -y
-}
+#installations via dpkg 
 install_slack () {
 	cd $HOME/Dowloads
 	wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.10.3-amd64.deb
@@ -19,13 +13,6 @@ install_vscode () {
 	sudo dpkg-reconfigure --all
 }
 
-make_dir () {
-
-	mkdir ~/ISO
-	mkdir ~/Repositories
-	mkdir ~/Courses
-}
-
 install_discord () {
 	cd $HOME/Dowloads
 	wget https://discord.com/api/download?platform=linux&format=deb
@@ -33,10 +20,35 @@ install_discord () {
 	sudo dpkg-reconfigure --all
 }
 
+install_skype () { 
+	cd $HOME/Dowloads
+	wget https://go.skype.com/skypeforlinux-64.deb
+	sudo dpkg -i skype*
+	sudo dpkg-reconfigure --all
+}
 
+
+
+
+
+#Uncomment if you want ubuntu, centos and ubuntu server image
+
+
+#installations via apt
+install_ssh_server () {
+	sudo apt install openssh-server -y
+}
+install_vim () {
+	sudo apt install vim -y
+}
+
+install_virtual_box () {
+	sudo apt install virtualbox -y
+}
 install_git () {
 	sudo apt install git -y
 }
+
 install_extensions () {
 	sudo apt install gnome-tweaks -y
 	sudo apt install gnome-shell-extensions -y
@@ -44,13 +56,22 @@ install_extensions () {
 	sudo apt install chrome-gnome-shell -y
 }
 
+#custom ui from gsettings
+
 make_it_personal () {
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Shift>Alt_L']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 }
 
-#Uncomment if you want ubuntu, centos and ubuntu server image
+###Dowload of iso files
+make_dir () {
+
+	mkdir ~/ISO
+	mkdir ~/Repositories
+	mkdir ~/Courses
+}
+
 download_iso () {
 	URL="https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-desktop-amd64.iso?_ga=2.191917418.1785140619.1602620046-270242459.1602620046"
 	URL2="http://centos.uni-sofia.bg/centos/8.2.2004/isos/x86_64/CentOS-8.2.2004-x86_64-boot.iso"
@@ -59,17 +80,10 @@ download_iso () {
 	wget $URL2 -P /home/nick/ISO
 	wget $URL3 -P /home/nick/ISO
 }
-install_skype () { 
-	cd $HOME/Dowloads
-	wget https://go.skype.com/skypeforlinux-64.deb
-	sudo dpkg -i skype*
-	sudo dpkg-reconfigure --all
-}
-install_ssh_server () {
-	sudo apt install openssh-server -y
-}
 
 
+
+### install from functions starts here
 install_vim
 install_slack
 install_vscode
