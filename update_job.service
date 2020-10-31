@@ -1,0 +1,7 @@
+[Unit]
+Description=System Update
+[Service]
+Type=simple
+ExecStart=/root/bin/script.sh
+[Install]
+WantedBy=muti-user.target

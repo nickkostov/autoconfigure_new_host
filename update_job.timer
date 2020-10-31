@@ -1,0 +1,7 @@
+[Unit]
+Description=System updates automatically after it is booted
+[Timer]
+OnStartupSec=1 min
+Unit=update_job.service
+[Install]
+WantedBy=multi-user.target
