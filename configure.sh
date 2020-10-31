@@ -5,14 +5,6 @@ install_slack () {
 	sudo dpkg -i slack*
 	sudo dpkg-reconfigure --all	
 }
-
-install_vscode () {
-	cd $HOME/Dowloads
-	wget https://go.microsoft.com/fwlink/?LinkID=760868
-	sudo dpkg -i code*
-	sudo dpkg-reconfigure --all
-}
-
 install_discord () {
 	cd $HOME/Dowloads
 	wget https://discord.com/api/download?platform=linux&format=deb
@@ -27,13 +19,6 @@ install_skype () {
 	sudo dpkg-reconfigure --all
 }
 
-
-
-
-
-#Uncomment if you want ubuntu, centos and ubuntu server image
-
-
 #installations via apt
 install_ssh_server () {
 	sudo apt install openssh-server -y
@@ -47,6 +32,14 @@ install_virtual_box () {
 }
 install_git () {
 	sudo apt install git -y
+}
+install_vscode () {
+	sudo apt install software-properties-common apt-transport-https -y
+	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+	sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+	sudo apt install code -y
+
+
 }
 
 install_extensions () {
