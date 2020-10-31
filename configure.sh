@@ -80,7 +80,7 @@ make_it_personal () {
 
 ###Dowload of iso files
 make_dir () {
-
+	echo "Creation of folders"
 	mkdir ~/ISO
 	echo "=============================================================================="
 	mkdir ~/Repositories
