@@ -1,7 +1,7 @@
 #installations via dpkg 
 install_slack () {
 	echo "Installing Slack begins"
-	cd $HOME/Dowloads
+	cd $HOME/Downloads
 	wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.10.3-amd64.deb
 	sudo dpkg -i slack*
 	sudo dpkg-reconfigure --all	
@@ -9,7 +9,7 @@ install_slack () {
 }
 install_discord () {
 	echo "Installing Discord begins"
-	cd $HOME/Dowloads
+	cd $HOME/Downloads
 	wget https://discord.com/api/download?platform=linux&format=deb
 	sudo dpkg -i discord*
 	sudo dpkg-reconfigure --all
@@ -18,7 +18,7 @@ install_discord () {
 
 install_skype () { 
 	echo "Installing Skype begins"
-	cd $HOME/Dowloads
+	cd $HOME/Downloads
 	wget https://go.skype.com/skypeforlinux-64.deb
 	sudo dpkg -i skype*
 	sudo dpkg-reconfigure --all
