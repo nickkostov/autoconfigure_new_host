@@ -124,3 +124,5 @@ make_it_personal
 install_skype
 install_ssh_server
 install_virtual_box
+
+#PATH=$PATH:/home/$USER/scripts
