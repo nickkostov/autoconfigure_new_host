@@ -25,6 +25,11 @@ install_skype () {
 	echo "=============================================================================="
 }
 
+install_chrome () {
+	echo "Install Chrome"
+	
+}
+
 #installations via apt
 install_ssh_server () {
 	echo "Installing SSH-Server begins"
