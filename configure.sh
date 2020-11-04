@@ -1,6 +1,13 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NO_COLOR='\033[0m'
+
 #installations via dpkg 
+
 install_slack () {
-	echo "Installing Slack begins"
+	echo "Slack Installation Begins"
 	cd $HOME/Downloads
 	wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.10.3-amd64.deb
 	sudo dpkg -i slack*
@@ -8,7 +15,7 @@ install_slack () {
 	echo "=============================================================================="
 }
 install_discord () {
-	echo "Installing Discord begins"
+	echo "Discord Installation Begins"
 	cd $HOME/Downloads
 	wget https://discord.com/api/download?platform=linux&format=deb
 	sudo dpkg -i discord*
@@ -17,7 +24,7 @@ install_discord () {
 }
 
 install_skype () { 
-	echo "Installing Skype begins"
+	echo "Skype Installation Begins"
 	cd $HOME/Downloads
 	wget https://go.skype.com/skypeforlinux-64.deb
 	sudo dpkg -i skype*
@@ -26,7 +33,7 @@ install_skype () {
 }
 
 install_chrome () {
-	echo "Install Chrome"
+	echo "Chrome Installation Begins"
 	cd $HOME/Dowloads
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome*
@@ -37,39 +44,50 @@ install_chrome () {
 
 #installations via apt
 install_ssh_server () {
-	echo "Installing SSH-Server begins"
+	echo "SSH-Server Installation Begins"
 	sudo apt install openssh-server -y
 	echo "=============================================================================="
 }
 install_vim () {
-	echo "Installing VIM begins"
+	echo "Vim Installation Begins"
 	sudo apt install vim -y
 	echo "=============================================================================="
 }
 
 install_virtual_box () {
-	echo "Installing VirtualBOX begins"
+	echo "VirtualBox Installation Begins"
 	sudo apt install virtualbox -y
 	echo "=============================================================================="
 }
 install_git () {
-	echo "Installing GIT begins"
+	echo "Git Installation Begins"
 	sudo apt install git -y
 	echo "=============================================================================="
 }
 install_vscode () {
-	echo "Installing VSCODE begins"
+	echo "VSCode Installation Begins"
 	sudo apt install software-properties-common apt-transport-https -y
 	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 	sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 	sudo apt install code -y
 	echo "=============================================================================="
+}
 
-
+install_steam() {
+    echo "Steam Installation Begins"
+    sudo apt install steam-installer -y 1>/dev/null 2>&1
+    if [[ $? -eq 0 ]];then # if no errors have occured then proceed to install
+        steam 1>/dev/null 2>&1 # you have to launch steam to install it ;)
+    fi
+    if [[ $? -eq 0 ]]; then
+        echo -e "${GREEN}[+][+][+] Steam is installed successfully! [+][+][+]${NO_COLOR}"
+    else
+        echo -e "${RED}[-][-][-] An error occured during the installation of Steam [-][-][-]${NO_COLOR}"
+    fi
 }
 
 install_extensions () {
-	echo "Confguration of GUI begins"
+	echo "Configuration of GUI Begins"
 	sudo apt install gnome-tweaks -y
 	echo "=============================================================================="
 	sudo apt install gnome-shell-extensions -y
@@ -93,12 +111,16 @@ make_it_personal () {
 
 ###Dowload of iso files
 make_dir () {
-	echo "Creation of folders"
+	echo "Creating /home${USER}/Iso"
 	mkdir ~/ISO
 	echo "=============================================================================="
-	mkdir ~/Repositories
+	
+        echo "Creating /home/${USER}/Repositories"
+        mkdir ~/Repositories
 	echo "=============================================================================="
-	mkdir ~/Courses
+	
+        echo "Creating /home/${USER}/Courses"
+        mkdir ~/Courses
 	echo "=============================================================================="
 }
 
@@ -127,5 +149,6 @@ install_chrome
 install_skype
 install_ssh_server
 install_virtual_box
+install_steam
 
-#PATH=$PATH:/home/$USER/scripts
+PATH=$PATH:/home/${USER}/scripts
