@@ -81,14 +81,20 @@ install_extensions () {
 }
 
 #custom ui from gsettings
-
+#suspend options on:
+#gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'suspend'
+#gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'suspend'
+#
 make_it_personal () {
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Shift>Alt_L']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 	gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-
+	#disable autosuspend when on ac
+	gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+	#disable autosuspend when on battery
+	gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 }
 
 ###Dowload of iso files
